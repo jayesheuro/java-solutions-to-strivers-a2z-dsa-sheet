@@ -1,0 +1,40 @@
+# Java build files
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# Eclipse (if ever used)
+.classpath
+.project
+.settings/
+
+# OS-specific
+.DS_Store        # macOS
+Thumbs.db        # Windows
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+
+# Optional: ignore IDE-specific workspace settings
+*.iws
+
+# Optional: ignore compiled files in subdirectories
+**/build/
+**/target/
