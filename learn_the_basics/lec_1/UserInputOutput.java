@@ -5,6 +5,9 @@ import java.util.Scanner;
 class UserInputOutput {
     // the required function
     public void printNumber(Scanner sc) {
+        /* Complete the function printNumber which takes an integer input from the user
+         and prints it on the screen.
+         */
         int input = sc.nextInt();
         System.out.print(input);
     }
