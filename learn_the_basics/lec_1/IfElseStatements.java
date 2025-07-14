@@ -23,6 +23,6 @@ public class IfElseStatements {
 
     public static void main(String[] args) {
         IfElseStatements instance = new IfElseStatements();
-        instance.studentGrade(8); //checking for marks 76
+        instance.studentGrade(98); //checking for marks 98
     }
 }
