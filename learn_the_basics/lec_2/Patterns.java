@@ -88,6 +88,21 @@ public class Patterns {
         }
     }
 
+    public void pattern9(int n) {
+        for(int i = 1; i <= 2*n; i++) {
+            int spaces = i <= 5 ? n - i : i - n - 1;
+            for(int k = 1; k <= spaces; k++) {
+                System.out.print(" ");
+            }
+            int stars = i <= 5 ? (2 * i - 1) : ((2 * n) - (2 * (i - n)) + 1);
+            for(int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+//            skipping the right hand side spaces
+            System.out.println(); //switch to next line for next i loop
+        }
+    }
+
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -148,7 +163,7 @@ public class Patterns {
 //     *********
         p.pattern7(5);
 
-//         7.
+//         8.
 //     *********
 //      *******
 //       *****
@@ -156,6 +171,21 @@ public class Patterns {
 //         *
 
 
-        p.pattern8((5));
+        p.pattern8(5);
+
+
+
+//         9.
+//         *
+//        ***
+//       *****
+//      *******
+//     *********
+//     *********
+//      *******
+//       *****
+//        ***
+//         *
+        p.pattern9(5);
     }
 }
