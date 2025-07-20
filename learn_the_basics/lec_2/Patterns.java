@@ -84,7 +84,7 @@ public class Patterns {
                 System.out.print("*");
             }
 //            skipping the right hand side spaces
-            System.out.println(); 
+            System.out.println();
         }
     }
 
@@ -98,8 +98,7 @@ public class Patterns {
             for(int j = 1; j <= stars; j++) {
                 System.out.print("*");
             }
-//            skipping the right hand side spaces
-            System.out.println(); 
+            System.out.println();
         }
     }
 
@@ -109,8 +108,16 @@ public class Patterns {
             for(int j = 1; j <= stars; j++) {
                 System.out.print("*");
             }
-//            skipping the right hand side spaces
-            System.out.println(); 
+            System.out.println();
+        }
+    }
+
+    public void pattern11(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print((i+j) % 2 == 0 ? 1 : 0);
+            }
+            System.out.println();
         }
     }
 
@@ -217,5 +224,15 @@ public class Patterns {
 //        **
 //         *
         p.pattern10(5);
+
+        System.out.println("11.===============================");
+//         11.
+//         1
+//         01
+//         101
+//         0101
+//         10101
+
+        p.pattern11(5);
     }
 }
