@@ -186,6 +186,16 @@ public class Patterns {
             System.out.println();
         }
     }
+
+    public void pattern18(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print((char)(64 + (n-i+j)));
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -353,6 +363,15 @@ public class Patterns {
 //      ABCDCBA
         p.pattern17(4); //number of rows
 
+        System.out.println("18.===============================");
+//         18.
+        // E
+        // DE
+        // CDE
+        // BCDE
+        // ABCDE
+
+        p.pattern18(5); //number of rows
 
     }
 }
