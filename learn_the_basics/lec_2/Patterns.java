@@ -173,6 +173,19 @@ public class Patterns {
             System.out.println();
         }
     }
+
+    public void pattern17(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            int k = 64;
+            for(int j = 1; j <= (2 * i) - 1; j++) {
+                System.out.print(j <= i ? (char)(++k) : (char)(--k));
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -331,6 +344,15 @@ public class Patterns {
 //         DDDD
 //         EEEEE
         p.pattern16(5); //number of rows
+
+        System.out.println("17.===============================");
+//         17.
+//         A
+//        ABA
+//       ABCBA
+//      ABCDCBA
+        p.pattern17(4); //number of rows
+
 
     }
 }
