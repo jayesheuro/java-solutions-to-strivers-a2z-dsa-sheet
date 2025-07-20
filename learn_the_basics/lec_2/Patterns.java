@@ -121,6 +121,32 @@ public class Patterns {
         }
     }
 
+    public void pattern12(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            for(int j = 1; j <= (2 * n) - (2 * i); j++) {
+                System.out.print(" ");
+            }
+            for(int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println();
+        }
+    }
+
+    public void pattern13(int n) {
+        int counter = 1;
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print(counter++ + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -234,5 +260,24 @@ public class Patterns {
 //         10101
 
         p.pattern11(5);
+
+        System.out.println("12.===============================");
+//         12.
+//         1      1
+//         12    21
+//         123  321
+//         12344321
+
+        p.pattern12(4);
+
+        System.out.println("13.===============================");
+//         13.
+//         1
+//         2 3
+//         4 5 6
+//         7 8 9 10
+//         11 12 13 14 15
+        p.pattern13(5); //number of rows
+
     }
 }
