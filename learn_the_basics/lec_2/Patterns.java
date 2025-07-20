@@ -2,8 +2,8 @@ package learn_the_basics.lec_2;
 
 public class Patterns {
     public void pattern1(int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 System.out.print("*");
             }
             System.out.print("\n");
@@ -12,8 +12,8 @@ public class Patterns {
     }
 
     public void pattern2(int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j <= i; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.print("\n");
@@ -23,8 +23,8 @@ public class Patterns {
 
 
     public void pattern3(int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j <= i; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print(j+1);
             }
             System.out.print("\n");
@@ -34,8 +34,8 @@ public class Patterns {
 
 
     public void pattern4(int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j <= i; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print(i);
             }
             System.out.print("\n");
@@ -44,8 +44,8 @@ public class Patterns {
     }
 
     public void pattern5(int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n - i; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i; j++) {
                 System.out.print('*');
             }
             System.out.print("\n");
@@ -53,8 +53,8 @@ public class Patterns {
         }
     }
     public void pattern6(int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n - i; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i; j++) {
                 System.out.print(j+1);
             }
             System.out.print("\n");
@@ -63,11 +63,11 @@ public class Patterns {
     }
 
     public void pattern7(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int k = 1; k <= n - i; k++) {
+        for (int i = 1; i <= n; i++) {
+            for (int k = 1; k <= n - i; k++) {
                 System.out.print(" ");
             }
-            for(int j = 1; j <= 2 * i - 1; j++) {
+            for (int j = 1; j <= 2 * i - 1; j++) {
                 System.out.print("*");
             }
 //            skipping the right hand side spaces
@@ -76,11 +76,11 @@ public class Patterns {
     }
 
     public void pattern8(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int k = 1; k < i; k++) {
+        for (int i = 1; i <= n; i++) {
+            for (int k = 1; k < i; k++) {
                 System.out.print(" ");
             }
-            for(int j = 1; j <= 2*n - 2*i + 1; j++) {
+            for (int j = 1; j <= 2*n - 2*i + 1; j++) {
                 System.out.print("*");
             }
 //            skipping the right hand side spaces
@@ -89,13 +89,13 @@ public class Patterns {
     }
 
     public void pattern9(int n) {
-        for(int i = 1; i <= 2 * n; i++) {
+        for (int i = 1; i <= 2 * n; i++) {
             int spaces = i <= n ? n - i : i - n - 1;
-            for(int k = 1; k <= spaces; k++) {
+            for (int k = 1; k <= spaces; k++) {
                 System.out.print(" ");
             }
             int stars = i <= n ? (2 * i - 1) : ((2 * n) - (2 * (i - n)) + 1);
-            for(int j = 1; j <= stars; j++) {
+            for (int j = 1; j <= stars; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -103,9 +103,9 @@ public class Patterns {
     }
 
     public void pattern10(int n) {
-        for(int i = 1; i <= 2 * n; i++) {
+        for (int i = 1; i <= 2 * n; i++) {
             int stars = i <= n ? (i) : ((2 * n) - i + 1);
-            for(int j = 1; j <= stars; j++) {
+            for (int j = 1; j <= stars; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -113,8 +113,8 @@ public class Patterns {
     }
 
     public void pattern11(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print((i+j) % 2 == 0 ? 1 : 0);
             }
             System.out.println();
@@ -122,14 +122,14 @@ public class Patterns {
     }
 
     public void pattern12(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(j);
             }
-            for(int j = 1; j <= (2 * n) - (2 * i); j++) {
+            for (int j = 1; j <= (2 * n) - (2 * i); j++) {
                 System.out.print(" ");
             }
-            for(int j = i; j >= 1; j--) {
+            for (int j = i; j >= 1; j--) {
                 System.out.print(j);
             }
 
@@ -139,8 +139,8 @@ public class Patterns {
 
     public void pattern13(int n) {
         int counter = 1;
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(counter++ + " ");
             }
             System.out.println();
@@ -148,8 +148,8 @@ public class Patterns {
     }
 
     public void pattern14(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print((char)(64 + j));
             }
             System.out.println();
@@ -157,8 +157,8 @@ public class Patterns {
     }
 
     public void pattern15(int n) {
-        for(int i = n; i >= 1; i--) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print((char)(64 + j));
             }
             System.out.println();
@@ -166,8 +166,8 @@ public class Patterns {
     }
 
     public void pattern16(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print((char)(64 + i));
             }
             System.out.println();
@@ -175,12 +175,12 @@ public class Patterns {
     }
 
     public void pattern17(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= n - i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
             int k = 64;
-            for(int j = 1; j <= (2 * i) - 1; j++) {
+            for (int j = 1; j <= (2 * i) - 1; j++) {
                 System.out.print(j <= i ? (char)(++k) : (char)(--k));
             }
             System.out.println();
@@ -188,8 +188,8 @@ public class Patterns {
     }
 
     public void pattern18(int n) {
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print((char)(64 + (n-i+j)));
             }
             System.out.println();
@@ -197,22 +197,72 @@ public class Patterns {
     }
 
     public void pattern19(int n) {
-        for(int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             int numStars = i <= (n / 2) ? (n / 2) - i + 1 : i - (n / 2);
-            for(int j = 1; j <= numStars; j++) {
+            for (int j = 1; j <= numStars; j++) {
                 System.out.print("*");
             }
             int spaces = i <= (n / 2) ? (2 * i) - 2 : 2 * (n - i);
-            for(int j = 1; j <= spaces; j++) {
+            for (int j = 1; j <= spaces; j++) {
                 System.out.print(" ");
             }
-            for(int j = 1; j <= numStars; j++) {
+            for (int j = 1; j <= numStars; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
 
+    public void pattern20(int n) {
+        for (int i = 1; i <= n; i++) {
+            if (i == (n / 2) + 1) {
+                continue;
+            }
+            int stars = i <= (n / 2) ? i : (n - i + 1);
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            int spaces = i <= (n / 2) ? (n - (2 * i)) : ((2 * i) - n - 2);
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+    }
+
+    public void pattern21(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print((i == 1 || i == n || j == 1 || j == n) ? "*" : " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern22(int n) {
+        for (int i = 1; i <= (2 * n - 1); i++) {
+            int min = i <= n ? (n - i + 1) : (i - n + 1);
+            int k = n;
+            for (int j = 1; j <= (2 * n - 1); j++) {
+                if (!(i > n) && (j >= ((2 * n) - i) + 1)) {
+                    System.out.print(++k);
+                } else if((i > n) && (j >= (i + 1))) {
+                    System.out.print(++k);
+                } else {
+                    if (k == min) {
+                        System.out.print(k);
+                    } else {
+                        System.out.print(k--);
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -405,6 +455,43 @@ public class Patterns {
         // **********
 
         p.pattern19(10); //number of rows
+
+        System.out.println("20.===============================");
+//         20.
+//        *        *
+//        **      **
+//        ***    ***
+//        ****  ****
+//        **********
+//        ****  ****
+//        ***    ***
+//        **      **
+//        *        *
+
+        p.pattern20(10); //number of max stars in a row
+
+        System.out.println("21.===============================");
+//         21.
+//        *****
+//        *   *
+//        *   *
+//        *   *
+//        *****
+
+        p.pattern21(5); // edge of the square
+
+
+        System.out.println("22.===============================");
+//         22.
+//        4444444
+//        4333334
+//        4322234
+//        4321234
+//        4322234
+//        4333334
+//        4444444
+
+        p.pattern22(4); // edge of the square
 
     }
 }
