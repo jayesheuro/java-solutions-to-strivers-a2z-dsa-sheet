@@ -71,7 +71,7 @@ public class Patterns {
                 System.out.print("*");
             }
 //            skipping the right hand side spaces
-            System.out.println(); //switch to next line for next i loop
+            System.out.println(); 
         }
     }
 
@@ -84,7 +84,7 @@ public class Patterns {
                 System.out.print("*");
             }
 //            skipping the right hand side spaces
-            System.out.println(); //switch to next line for next i loop
+            System.out.println(); 
         }
     }
 
@@ -99,13 +99,25 @@ public class Patterns {
                 System.out.print("*");
             }
 //            skipping the right hand side spaces
-            System.out.println(); //switch to next line for next i loop
+            System.out.println(); 
+        }
+    }
+
+    public void pattern10(int n) {
+        for(int i = 1; i <= 2 * n; i++) {
+            int stars = i <= n ? (i) : ((2 * n) - i + 1);
+            for(int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+//            skipping the right hand side spaces
+            System.out.println(); 
         }
     }
 
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
+        System.out.println("1.==============================="); 
 //        1.
 //        *****
 //        *****
@@ -113,7 +125,8 @@ public class Patterns {
 //        *****
 //        *****
         p.pattern1(5);
-
+        
+        System.out.println("2.==============================="); 
 //        2.
 //        *
 //        **
@@ -121,7 +134,8 @@ public class Patterns {
 //        ****
 //        *****
         p.pattern2(5);
-
+        
+        System.out.println("3.==============================="); 
 //        3.
 //        1
 //        12
@@ -129,7 +143,8 @@ public class Patterns {
 //        1234
 //        12345
         p.pattern3(5);
-
+        
+        System.out.println("4.==============================="); 
 //        4.
 //        1
 //        22
@@ -137,7 +152,8 @@ public class Patterns {
 //        4444
 //        55555
         p.pattern4(5);
-
+        
+        System.out.println("5.==============================="); 
 //        5.
 //        *****
 //        ****
@@ -145,7 +161,8 @@ public class Patterns {
 //        **
 //        *
         p.pattern5(5);
-
+        
+        System.out.println("6.==============================="); 
 //        6.
 //        12345
 //        1234
@@ -153,8 +170,8 @@ public class Patterns {
 //        12
 //        1
         p.pattern6(5);
-
-
+        
+        System.out.println("7.==============================="); 
 //         7.
 //         *
 //        ***
@@ -162,19 +179,18 @@ public class Patterns {
 //      *******
 //     *********
         p.pattern7(5);
-
+        
+        System.out.println("8.==============================="); 
 //         8.
 //     *********
 //      *******
 //       *****
 //        ***
 //         *
-
-
+        
         p.pattern8(5);
-
-
-
+        
+        System.out.println("9.==============================="); 
 //         9.
 //         *
 //        ***
@@ -187,5 +203,19 @@ public class Patterns {
 //        ***
 //         *
         p.pattern9(5);
+        
+        System.out.println("10.==============================="); 
+//         10.
+//         *
+//        **
+//       ***
+//      ****
+//     *****
+//     *****
+//      ****
+//       ***
+//        **
+//         *
+        p.pattern10(5);
     }
 }
