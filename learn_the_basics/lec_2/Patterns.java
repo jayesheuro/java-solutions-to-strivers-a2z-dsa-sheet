@@ -196,6 +196,23 @@ public class Patterns {
         }
     }
 
+    public void pattern19(int n) {
+        for(int i = 1; i <= n; i++) {
+            int numStars = i <= (n / 2) ? (n / 2) - i + 1 : i - (n / 2);
+            for(int j = 1; j <= numStars; j++) {
+                System.out.print("*");
+            }
+            int spaces = i <= (n / 2) ? (2 * i) - 2 : 2 * (n - i);
+            for(int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            for(int j = 1; j <= numStars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -372,6 +389,22 @@ public class Patterns {
         // ABCDE
 
         p.pattern18(5); //number of rows
+
+
+        System.out.println("19.===============================");
+//         19.
+        // **********
+        // ****  ****
+        // ***    ***
+        // **      **
+        // *        *
+        // *        *
+        // **      **
+        // ***    ***
+        // ****  ****
+        // **********
+
+        p.pattern19(10); //number of rows
 
     }
 }
