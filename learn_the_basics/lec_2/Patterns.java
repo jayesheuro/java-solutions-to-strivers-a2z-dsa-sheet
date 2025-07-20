@@ -61,6 +61,33 @@ public class Patterns {
 //            or just System.out.println();
         }
     }
+
+    public void pattern7(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int k = 1; k <= n - i; k++) {
+                System.out.print(" ");
+            }
+            for(int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+//            skipping the right hand side spaces
+            System.out.println(); //switch to next line for next i loop
+        }
+    }
+
+    public void pattern8(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int k = 1; k < i; k++) {
+                System.out.print(" ");
+            }
+            for(int j = 1; j <= 2*n - 2*i + 1; j++) {
+                System.out.print("*");
+            }
+//            skipping the right hand side spaces
+            System.out.println(); //switch to next line for next i loop
+        }
+    }
+
     public static void main(String[] args) {
         Patterns p = new Patterns();
 
@@ -111,5 +138,24 @@ public class Patterns {
 //        12
 //        1
         p.pattern6(5);
+
+
+//         7.
+//         *
+//        ***
+//       *****
+//      *******
+//     *********
+        p.pattern7(5);
+
+//         7.
+//     *********
+//      *******
+//       *****
+//        ***
+//         *
+
+
+        p.pattern8((5));
     }
 }
