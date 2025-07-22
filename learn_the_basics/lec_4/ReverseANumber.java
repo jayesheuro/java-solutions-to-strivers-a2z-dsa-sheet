@@ -16,6 +16,5 @@ public class ReverseANumber {
     public static void main(String[] args) {
         ReverseANumber c = new ReverseANumber();
         System.out.println(c.reverseANumber( -12));
-//        System.out.println( -0123 % 10);
     }
 }
