@@ -1,4 +1,4 @@
-package learn_the_basics.lec_2;
+package step1_learn_the_basics.lec_2;
 
 public class Patterns {
     public void pattern1(int n) {

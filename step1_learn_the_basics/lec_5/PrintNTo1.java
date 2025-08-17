@@ -1,4 +1,4 @@
-package learn_the_basics.lec_5;
+package step1_learn_the_basics.lec_5;
 
 public class PrintNTo1 {
     void printNTo1(int n) {

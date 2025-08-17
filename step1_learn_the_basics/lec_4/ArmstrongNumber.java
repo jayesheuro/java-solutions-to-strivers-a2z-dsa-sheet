@@ -1,6 +1,4 @@
-package learn_the_basics.lec_4;
-
-import java.util.Arrays;
+package step1_learn_the_basics.lec_4;
 
 public class ArmstrongNumber {
     public boolean check(int n) {

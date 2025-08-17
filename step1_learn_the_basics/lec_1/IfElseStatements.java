@@ -1,4 +1,4 @@
-package learn_the_basics.lec_1;
+package step1_learn_the_basics.lec_1;
 
 public class IfElseStatements {
     public void studentGrade(int marks) {

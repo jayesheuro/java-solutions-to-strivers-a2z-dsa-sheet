@@ -1,4 +1,4 @@
-package learn_the_basics.lec_1;
+package step1_learn_the_basics.lec_1;
 
 import java.util.Scanner;
 

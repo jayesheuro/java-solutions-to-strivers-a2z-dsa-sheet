@@ -1,4 +1,4 @@
-package learn_the_basics.lec_6;
+package step1_learn_the_basics.lec_6;
 
 import java.util.HashMap;
 import java.util.Map;

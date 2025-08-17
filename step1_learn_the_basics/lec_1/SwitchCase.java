@@ -1,4 +1,4 @@
-package learn_the_basics.lec_1;
+package step1_learn_the_basics.lec_1;
 
 public class SwitchCase {
 //    Given the integer day denoting the day number, print on the screen which day of the week it is.

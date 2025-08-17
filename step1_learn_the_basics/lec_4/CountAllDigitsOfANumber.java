@@ -1,4 +1,4 @@
-package learn_the_basics.lec_4;
+package step1_learn_the_basics.lec_4;
 
 public class CountAllDigitsOfANumber {
     public int countNumberOfDigits(int n) {
