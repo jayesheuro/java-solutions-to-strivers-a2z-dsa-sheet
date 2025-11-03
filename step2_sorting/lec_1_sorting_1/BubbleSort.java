@@ -1,4 +1,4 @@
-package step2_sorting.lec_1_storting_1;
+package step2_sorting.lec_1_sorting_1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
