@@ -1,37 +1,55 @@
 package step1_learn_the_basics.lec_2;
 
 public class PatternsRevised {
-    static void Pattern1(int n) {
+    static void pattern1(int n) {
         // *****
         // *****
         // *****
         // *****
         // *****
 
-        for(int i=1; i<=n; i++){
-            for(int j=1; j<=n;j++){
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
 
-    static void Pattern2(int n) {
+    static void pattern2(int n) {
         // *
         // **
         // ***
         // ****
         // *****
 
-        for(int i=1; i<=n; i++){
-            for(int j=1; j<=i;j++){
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
-    public static void main(String[] args) {
-        //    Pattern1(5);
-            Pattern2(5);
+
+        static void pattern3(int n) {
+        // 1
+        // 12
+        // 123
+        // 1234
+        // 12345
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
         }
+    }
+
+
+    public static void main(String[] args) {
+        // pattern1(5);
+        // pattern2(5);
+        // pattern3(5);
+    }
 }
