@@ -128,6 +128,29 @@ public class PatternsRevised {
         }
     }
 
+    static void pattern9(int n) {
+        //     *
+        //    ***
+        //   *****
+        //  *******
+        // *********
+        // *********
+        //  *******
+        //   *****
+        //    ***
+        //     *
+
+        for (int i = 1; i <= 2 * n; i++) {
+            for (int j = 1; j <= (i <= n ? (n - i) : (i - n - 1)); j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (i <= n ? (2 * i - 1) : (2 * (2 * n - i) + 1)); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // pattern1(5);
         // pattern2(5);
@@ -136,6 +159,7 @@ public class PatternsRevised {
         // pattern5(5);
         // pattern6(5);
         // pattern7(5);
-        pattern8(5);
+        // pattern8(5);
+        pattern9(5);
     }
 }
