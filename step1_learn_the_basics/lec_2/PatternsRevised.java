@@ -69,7 +69,7 @@ public class PatternsRevised {
         // *
 
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= (n-i+1); j++) {
+            for (int j = 1; j <= (n - i + 1); j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -84,7 +84,7 @@ public class PatternsRevised {
         // 1
 
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= (n-i+1); j++) {
+            for (int j = 1; j <= (n - i + 1); j++) {
                 System.out.print(j);
             }
             System.out.println();
@@ -92,36 +92,35 @@ public class PatternsRevised {
     }
 
     static void pattern7(int n) {
-        //     *
-        //    ***
-        //   *****
-        //  *******
+        // *
+        // ***
+        // *****
+        // *******
         // *********
 
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= (n-i); j++) {
+            for (int j = 1; j <= (n - i); j++) {
                 System.out.print(" ");
             }
-            for (int j = 1; j <= (2*i-1); j++) {
+            for (int j = 1; j <= (2 * i - 1); j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
 
-    
     static void pattern8(int n) {
         // *********
-        //  *******
-        //   *****
-        //    ***
-        //     *
+        // *******
+        // *****
+        // ***
+        // *
 
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= (i-1); j++) {
+            for (int j = 1; j <= (i - 1); j++) {
                 System.out.print(" ");
             }
-            for (int j = 1; j <= (2*(n-i)+1); j++) {
+            for (int j = 1; j <= (2 * (n - i) + 1); j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -129,22 +128,45 @@ public class PatternsRevised {
     }
 
     static void pattern9(int n) {
-        //     *
-        //    ***
-        //   *****
-        //  *******
+        // *
+        // ***
+        // *****
+        // *******
         // *********
         // *********
-        //  *******
-        //   *****
-        //    ***
-        //     *
+        // *******
+        // *****
+        // ***
+        // *
 
         for (int i = 1; i <= 2 * n; i++) {
             for (int j = 1; j <= (i <= n ? (n - i) : (i - n - 1)); j++) {
                 System.out.print(" ");
             }
             for (int j = 1; j <= (i <= n ? (2 * i - 1) : (2 * (2 * n - i) + 1)); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern10(int n) {
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+
+        for (int i = 1; i <= 2 * n; i++) {
+            for (int j = 1; j <= (i <= n ? (n - i) : (i - n - 1)); j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (i <= n ? i : (2 * n - i + 1)); j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -160,6 +182,7 @@ public class PatternsRevised {
         // pattern6(5);
         // pattern7(5);
         // pattern8(5);
-        pattern9(5);
+        // pattern9(5);
+        pattern10(5);
     }
 }
