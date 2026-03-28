@@ -189,6 +189,26 @@ public class PatternsRevised {
         }
     }
 
+    static void pattern12(int n) {
+
+        //1      1
+        //12    21
+        //123  321
+        //12344321
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 2*n; j++) {
+                if (j <= i) {
+                    System.out.print(j);
+                } else if (j <= 2*n - i) {
+                    System.out.print(".");
+                } else {
+                    System.out.print(2*n - j + 1);
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // pattern1(5);
         // pattern2(5);
@@ -200,6 +220,7 @@ public class PatternsRevised {
         // pattern8(5);
         // pattern9(5);
         // pattern10(5);
-        pattern11(5);
+        // pattern11(5);
+        pattern12(5);
     }
 }
