@@ -241,6 +241,22 @@ public class PatternsRevised {
             System.out.println();
         }
     }
+    static void pattern15(int n) {
+
+        //ABCDE
+        //ABCD
+        //ABC
+        //AB
+        //A
+        int k;
+        for (int i = 1; i <= n; i++) {
+            k = 'A';
+            for (int j = 1; j <= n - i + 1; j++) {
+                System.out.print((char) k++);
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         // pattern1(5);
         // pattern2(5);
@@ -255,6 +271,8 @@ public class PatternsRevised {
         // pattern11(5);
         // pattern12(5);
         // pattern13(5);
-        pattern14(5);
+        // pattern14(5);
+        pattern15(5);
+       
     }
 }
