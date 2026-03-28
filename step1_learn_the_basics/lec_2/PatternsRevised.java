@@ -241,6 +241,7 @@ public class PatternsRevised {
             System.out.println();
         }
     }
+
     static void pattern15(int n) {
 
         //ABCDE
@@ -257,6 +258,44 @@ public class PatternsRevised {
             System.out.println();
         }
     }
+    
+    static void pattern16(int n) {
+
+        //A
+        //BB
+        //CCC
+        //DDDD
+        //EEEEE
+        int k = 'A';
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print((char) k);
+            }
+            k++;
+            System.out.println();
+        }
+    }
+
+    static void pattern17(int n) {
+
+        //   A
+        //  ABA
+        // ABCBA
+        //ABCDCBA
+        int k;
+        for (int i = 1; i <= n; i++) {
+            int spaces = n - i;
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(' ');
+            }
+            k = 'A';
+            for (int j = 1; j <= 2*i - 1; j++) {
+                System.out.print((char) ((spaces + j) < n ? k++ : k--));
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // pattern1(5);
         // pattern2(5);
@@ -272,7 +311,8 @@ public class PatternsRevised {
         // pattern12(5);
         // pattern13(5);
         // pattern14(5);
-        pattern15(5);
-       
+        // pattern15(5);
+        // pattern16(5);
+        pattern17(5);
     }
 }
