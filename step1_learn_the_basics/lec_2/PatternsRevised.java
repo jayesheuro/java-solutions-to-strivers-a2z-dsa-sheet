@@ -296,6 +296,22 @@ public class PatternsRevised {
         }
     }
 
+    static void pattern18(int n) {
+
+        // E
+        // DE
+        // CDE
+        // BCDE
+        // ABCDE
+        int k = 'E';
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print((char) (k - i + j));
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // pattern1(5);
         // pattern2(5);
@@ -313,6 +329,7 @@ public class PatternsRevised {
         // pattern14(5);
         // pattern15(5);
         // pattern16(5);
-        pattern17(5);
+        // pattern17(5);
+        pattern18(5);
     }
 }
