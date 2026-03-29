@@ -361,6 +361,71 @@ public class PatternsRevised {
         }
     }
 
+    static void pattern20(int n) {
+//        *        *
+//        **      **
+//        ***    ***
+//        ****  ****
+//        **********
+//        **********
+//        ****  ****
+//        ***    ***
+//        **      **
+//        *        *
+        for (int i = 1; i <= 2*n; i++) {
+            int stars = (i <= n) ? i : (2*n - i + 1);
+            int spaces = 2 * (n - stars);
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern21(int n) {
+        // *****
+        // *   *
+        // *   *
+        // *   *
+        // *****
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern22(int n) {
+        int size = 2 * n - 1;
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+
+                int top = i;
+                int left = j;
+                int bottom = size - 1 - i;
+                int right = size - 1 - j;
+
+                int minDist = Math.min(Math.min(top, bottom), Math.min(left, right));
+
+                // value = n - minimum distance from all edges
+                System.out.print(n - minDist);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // pattern1(5);
         // pattern2(5);
@@ -380,6 +445,9 @@ public class PatternsRevised {
         // pattern16(5);
         // pattern17(5);
         // pattern18(5);
-        pattern19(5);
+        // pattern19(5);
+        // pattern20(5);
+        // pattern21(5);
+        pattern22(4);
     }
 }
