@@ -311,6 +311,55 @@ public class PatternsRevised {
             System.out.println();
         }
     }
+    
+    static void pattern19(int n) {
+//         19.
+        // **********
+        // ****  ****
+        // ***    ***
+        // **      **
+        // *        *
+        // *        *
+        // **      **
+        // ***    ***
+        // ****  ****
+        // **********
+        for (int i = 1; i <= 2*n; i++) {
+            for (int j = 1; j <= 2*n; j++) {
+                if (j <= n) {
+                    if (i <= n) {
+                        if (j <= n - i + 1) {
+                            System.out.print("*");
+                        } else {
+                            System.out.print(" ");
+                        }
+                    } else {
+                        if (j <= i-n) {
+                            System.out.print("*");
+                        } else {
+                            System.out.print(" ");
+
+                        }
+                    }
+                } else {
+                    if (i <= n) {
+                        if (j <= n + i - 1) {
+                            System.out.print(" ");
+                        } else {
+                            System.out.print("*");
+                        }
+                    } else {
+                        if (j <= 2*n - (i - n)) {
+                            System.out.print(" ");
+                        } else {
+                            System.out.print("*");
+                        }
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
         // pattern1(5);
@@ -330,6 +379,7 @@ public class PatternsRevised {
         // pattern15(5);
         // pattern16(5);
         // pattern17(5);
-        pattern18(5);
+        // pattern18(5);
+        pattern19(5);
     }
 }
