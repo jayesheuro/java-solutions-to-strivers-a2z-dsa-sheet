@@ -9,7 +9,7 @@ public class CheckForPrime {
 
         // only need to check factors upto square root of n
         // only need to check for odd numbers
-        for(int i = 3; i * i < n; i = i+2) {
+        for(int i = 3; i * i <= n; i = i+2) {
             if(n % i == 0) {
                 return "COMPOSITE";
             }
@@ -17,6 +17,6 @@ public class CheckForPrime {
         return "PRIME";
     }
     public static void main(String[] args) {
-        System.out.println(checkForPrime(109));
+        System.out.println(checkForPrime(121));
     }
 }
