@@ -2,6 +2,7 @@ package step1_learn_the_basics.lec_5.revision;
 
 public class CheckIfStringIsPalindrome {
 
+    //NOTE: can be made generic
     static void recursiveReverseStringSwapper(char[] arr, int start, int end) {
         if(start >= end) {
             return;

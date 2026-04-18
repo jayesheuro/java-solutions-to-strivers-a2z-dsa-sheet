@@ -2,6 +2,8 @@ package step1_learn_the_basics.lec_5.revision;
 
 public class ReverseAnArray {
 
+    //NOTE: this function can also be made generic by using generic type instead of an int[] arr.
+    // similar logic is being used in CheckIfStringIsPalindrome.
     static void recursiveReverseSwapper(int[] arr, int start, int end) {
         if(start >= end) {
             return;
