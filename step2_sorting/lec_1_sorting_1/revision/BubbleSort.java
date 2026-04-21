@@ -1,15 +1,24 @@
 package step2_sorting.lec_1_sorting_1.revision;
 
 public class BubbleSort {
-    static void bubbleSort(int[] arr){
+    static void bubbleSort(int[] arr, String order){
         for(int i = 0; i <= arr.length - 1; i++) {
             boolean swapped = false;
             for(int j = 0; j < arr.length - i - 1; j++) {
-                if(arr[j] > arr[j+1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                    swapped = true;
+                if(order.equalsIgnoreCase("desc")){
+                    if(arr[j] < arr[j+1]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                        swapped = true;
+                    }
+                } else {
+                    if(arr[j] > arr[j+1]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                        swapped = true;
+                    }
                 }
             }
             if(!swapped) return;
@@ -18,7 +27,7 @@ public class BubbleSort {
  
     public static void main(String[] args) {
         int[] arr = {5,3,8,2,2};
-        bubbleSort(arr);
+        bubbleSort(arr, "ASC");
         for(int i: arr){
             System.out.println(i);
         }
