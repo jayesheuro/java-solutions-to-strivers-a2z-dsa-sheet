@@ -8,7 +8,6 @@ public class InsertionSort {
         // hence our first number to find correct position (key) becomes index 1 (second number)
         for(int i = 1; i <= arr.length - 1; i++) {
             int key = arr[i];
-            // now we have to find its correct position in the left part of array
             int j = i - 1;
             while(j >= 0 && arr[j] > key) {
                 arr[j+1] = arr[j]; //shift one place to right
