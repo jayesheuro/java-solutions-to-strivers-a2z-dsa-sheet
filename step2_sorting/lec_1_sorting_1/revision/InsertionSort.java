@@ -10,10 +10,10 @@ public class InsertionSort {
             int key = arr[i];
             int j = i - 1;
             while(j >= 0 && arr[j] > key) {
-                arr[j+1] = arr[j]; //shift one place to right
+                arr[j+1] = arr[j];
                 j--;
             }
-            arr[j + 1] = key;
+            arr[j + 1] = key; // keeping out of loop avoids unnecessary assignments
         }
         
     }
