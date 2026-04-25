@@ -4,8 +4,6 @@ public class InsertionSort {
     static void insertionSort(int[] arr) {
         if(arr.length <= 1) return;
 
-        // we consider the first number is always sorted, 
-        // hence our first number to find correct position (key) becomes index 1 (second number)
         for(int i = 1; i <= arr.length - 1; i++) {
             int key = arr[i];
             int j = i - 1;
@@ -13,7 +11,7 @@ public class InsertionSort {
                 arr[j+1] = arr[j];
                 j--;
             }
-            arr[j + 1] = key; // keeping out of loop avoids unnecessary assignments
+            arr[j + 1] = key; // an optimization: keeping out of loop avoids unnecessary assignments
         }
         
     }
