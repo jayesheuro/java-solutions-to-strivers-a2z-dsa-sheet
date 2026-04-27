@@ -1,8 +1,7 @@
-package step2_sorting.lec_1_sorting_2;
-
 import java.util.Arrays;
 
-public class MergeSortPrimitive {
+//merge sort works on divide and conqour algorithm
+public class MergeSortDivideAndConquer {
 
     static void merge(int[] arr, int low, int mid, int high) {
         int[] temp = new int[high - low + 1];
