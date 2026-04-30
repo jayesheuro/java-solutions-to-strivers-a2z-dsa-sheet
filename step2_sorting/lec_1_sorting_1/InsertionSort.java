@@ -7,20 +7,6 @@ import java.util.List;
 public class InsertionSort {
 
     public List<Integer> insertionSort(List<Integer> nums) {
-        // //Selection sort = select minimum and swap
-        // for(int i=0; i<=nums.size()-2;i++) {
-        //     int minimumIndex = i;
-        //     for(int j=i; j<=nums.size()-1; j++){
-        //         if(nums.get(j) < nums.get(minimumIndex)){
-        //             minimumIndex=j;
-        //         }
-        //     }
-        //     //swap minimumIndex and i
-        //     Integer temp = nums.get(minimumIndex);
-        //     nums.set(minimumIndex, nums.get(i));
-        //     nums.set(i,temp);
-        // }
-        // return nums;
         for(int i = 0; i < nums.size(); i++){
             for(int j = i; j > 0 && nums.get(j-1) > nums.get(j); j--){
                 //swap

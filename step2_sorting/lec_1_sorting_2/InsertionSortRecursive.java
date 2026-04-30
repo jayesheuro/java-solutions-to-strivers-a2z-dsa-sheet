@@ -12,17 +12,6 @@ public class InsertionSortRecursive {
             j--;
         }
         isr(arr, n, i + 1);
-
-        // basic iterative flow
-        // for(int i = 1; i < n; i++) {
-        //     int j = i;
-        //     while(j > 0 && arr.get(j) < arr.get(j - 1)) {
-        //         int temp = arr.get(j);
-        //         arr.set(j, arr.get(j-1));
-        //         arr.set(j - 1, temp);
-        //         j--;
-        //     }
-        // }
     }
 
     static void insertionSortRecursive(List<Integer> arr) {
