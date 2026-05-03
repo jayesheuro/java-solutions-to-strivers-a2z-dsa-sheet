@@ -1,3 +1,5 @@
+package step2_sorting.lec_2_sorting_2;
+
 import java.util.Arrays;
 
 //merge sort works on divide and conqour algorithm
@@ -5,10 +7,10 @@ public class MergeSortDivideAndConquer {
 
     static void merge(int[] arr, int low, int mid, int high) {
         int[] temp = new int[high - low + 1];
-        
+
         int left = low;
         int right = mid + 1;
-        int k = 0; //index for pushing to temp
+        int k = 0; // index for pushing to temp
 
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {
@@ -28,14 +30,17 @@ public class MergeSortDivideAndConquer {
 
         for (int i = 0; i < temp.length; i++) {
             arr[low + i] = temp[i];
-            // here low + i is important. It prevents overriding the left part of array which is not to be modified if a this merge be of any right part
+            // here low + i is important. It prevents overriding the left part of array
+            // which is not to be modified if a this merge be of any right part
         }
     }
 
     static void mergeSortRecursive(int[] arr, int low, int high) {
-        if (low >= high) return;
+        if (low >= high)
+            return;
 
-        // preventing potential integer overflow, an alternative to int mid = (low + high) / 2
+        // preventing potential integer overflow, an alternative to int mid = (low +
+        // high) / 2
         int mid = low + (high - low) / 2;
 
         mergeSortRecursive(arr, low, mid);
@@ -49,12 +54,12 @@ public class MergeSortDivideAndConquer {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 1, 2, 4, 1, 5, 2, 6, 4};
-        
+        int[] arr = { 3, 1, 2, 4, 1, 5, 2, 6, 4 };
+
         System.out.println("Before Sorting: " + Arrays.toString(arr));
-        
+
         mergeSort(arr, arr.length);
-        
+
         System.out.println("After Sorting:  " + Arrays.toString(arr));
     }
 }
