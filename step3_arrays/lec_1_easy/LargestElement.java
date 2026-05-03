@@ -1,5 +1,7 @@
 package step3_arrays.lec_1_easy;
 
+// import java.util.Arrays;
+
 public class LargestElement {
 
     static int getLargestNumber(int[] arr) {
@@ -7,6 +9,11 @@ public class LargestElement {
         if (size < 1)
             return -1; // the array is empty so MAX does not exist
 
+        // Brute Force - O(N logN)
+        // Arrays.sort(arr);
+        // int max = arr[size-1];
+
+        // Optimal - O(n)
         int max = arr[0];
         int i = 0;
         while (i <= size - 1) {
