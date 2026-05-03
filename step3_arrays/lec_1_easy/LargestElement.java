@@ -10,7 +10,9 @@ public class LargestElement {
         int max = arr[0];
         int i = 0;
         while (i <= size - 1) {
-            max = arr[i] > max ? arr[i] : max;
+            if (max < arr[i]) {
+                max = arr[i]; // optimization
+            }
             i++;
         }
 
