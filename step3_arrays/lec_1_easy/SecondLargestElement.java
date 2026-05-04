@@ -50,9 +50,23 @@ public class SecondLargestElement {
         return secondMax;
     }
 
+    static int getSecondMin(int[] arr) {
+        int min = arr[0];
+        int secondMin = Integer.MAX_VALUE;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                secondMin = min;
+                min = arr[i];
+            }
+        }
+        return secondMin;
+
+    }
+
     public static void main(String[] args) {
         int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8, 9 };
         int secondMax = getSecondMax(arr);
-        System.out.println(secondMax);
+        int secondMin = getSecondMin(arr);
+        System.out.println(secondMax + ", " + secondMin);
     }
 }
