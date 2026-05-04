@@ -45,6 +45,8 @@ public class SecondLargestElement {
             if (arr[i] > max) {
                 secondMax = max;
                 max = arr[i];
+            } else if (arr[i] < max && arr[i] > secondMax) {
+                secondMax = arr[i];
             }
         }
         return secondMax;
@@ -57,6 +59,8 @@ public class SecondLargestElement {
             if (arr[i] < min) {
                 secondMin = min;
                 min = arr[i];
+            } else if (arr[i] > min && arr[i] < secondMin) {
+                secondMin = arr[i];
             }
         }
         return secondMin;
@@ -64,7 +68,8 @@ public class SecondLargestElement {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8, 9 };
+        // int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8, 9 };
+        int[] arr = { 10, 5, 8 };
         int secondMax = getSecondMax(arr);
         int secondMin = getSecondMin(arr);
         System.out.println(secondMax + ", " + secondMin);
