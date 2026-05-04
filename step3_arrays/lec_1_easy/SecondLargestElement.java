@@ -11,21 +11,47 @@ public class SecondLargestElement {
         if (arr.length == 1) {
             return arr[0];
         }
-        // BRUTE
-        Arrays.sort(arr);
-        int max = arr[arr.length - 1];
-        int i = arr.length - 1;
-        while (i >= 0) {
-            if (arr[i] != max) {
-                break;
+        // // BRUTE O(nLogn)
+        // Arrays.sort(arr);
+        // int max = arr[arr.length - 1];
+        // int i = arr.length - 1;
+        // while (i >= 0) {
+        // if (arr[i] != max) {
+        // break;
+        // }
+        // i--;
+        // }
+        // return arr[i];
+
+        // // better O(n) with 2 loops
+        // int max = arr[0], secondMax = arr[0];
+        // for (int i = 0; i < arr.length; i++) {
+        // if (arr[i] > max) {
+        // max = arr[i];
+        // }
+        // }
+        // for (int i = 0; i < arr.length; i++) {
+        // if (arr[i] > secondMax && arr[i] < max) {
+        // secondMax = arr[i];
+        // }
+        // }
+        // return secondMax;
+
+        // optimal O(n) with 1 loop >>> Historically when someone becomes the largest,
+        // it makes someone second largest
+        int max = arr[0];
+        int secondMax = Integer.MIN_VALUE;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                secondMax = max;
+                max = arr[i];
             }
-            i--;
         }
-        return arr[i];
+        return secondMax;
     }
 
     public static void main(String[] args) {
-        int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8 };
+        int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8, 9 };
         int secondMax = getSecondMax(arr);
         System.out.println(secondMax);
     }
