@@ -1,7 +1,5 @@
 package step3_arrays.lec_1_easy;
 
-import java.util.Arrays;
-
 public class SecondLargestElement {
 
     static int getSecondMax(int[] arr) {
@@ -52,26 +50,9 @@ public class SecondLargestElement {
         return secondMax;
     }
 
-    static int getSecondMin(int[] arr) {
-        int min = arr[0];
-        int secondMin = Integer.MAX_VALUE;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
-                secondMin = min;
-                min = arr[i];
-            } else if (arr[i] > min && arr[i] < secondMin) {
-                secondMin = arr[i];
-            }
-        }
-        return secondMin;
-
-    }
-
     public static void main(String[] args) {
-        // int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8, 9 };
-        int[] arr = { 10, 5, 8 };
+        int[] arr = { 4, 5, 3, 3, 5, 6, 6, 5, 7, 8, 1, 8, 9 };
         int secondMax = getSecondMax(arr);
-        int secondMin = getSecondMin(arr);
-        System.out.println(secondMax + ", " + secondMin);
+        System.out.println(secondMax);
     }
 }
