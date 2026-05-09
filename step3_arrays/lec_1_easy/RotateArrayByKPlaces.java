@@ -52,8 +52,8 @@ public class RotateArrayByKPlaces {
             System.out.print(i + " ");
         }
 
-        // rotateArrayLeft(arr, 2);
-        rotateArrayBrute(arr, 2);
+        rotateArrayLeft(arr, 2);
+        // rotateArrayBrute(arr, 2);
         System.out.print("OUTPUT: ");
         for (int i : arr) {
             System.out.print(i + " ");
