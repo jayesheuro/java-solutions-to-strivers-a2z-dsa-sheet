@@ -1,7 +1,5 @@
 package step3_arrays.lec_1_easy;
 
-import java.util.Arrays;
-
 public class RotateArrayByKPlaces {
 
     static void reverse(int[] arr, int start, int end) {
