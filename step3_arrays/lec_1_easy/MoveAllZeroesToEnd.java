@@ -31,7 +31,7 @@ public class MoveAllZeroesToEnd {
 
         // loop from i + 1, and keep swapping i with non zero numbers
         for (int j = i + 1; j < n; j++) {
-            if (arr[j] > 0) {
+            if (arr[j] != 0) {
                 arr[i] = arr[j];
                 arr[j] = 0;
                 i++;
