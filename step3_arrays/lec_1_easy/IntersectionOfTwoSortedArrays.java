@@ -18,6 +18,7 @@ public class IntersectionOfTwoSortedArrays {
                 // this if ensures we dont put duplicates in the intersection.
                 // if (intersection.isEmpty() || intersection.get(intersection.size() - 1) !=
                 // a1[i]) {
+                // NOTE: In JAVA 21, we can use intersection.getLast() to get the last element
                 // intersection.add(a1[i]);
                 // }
 
