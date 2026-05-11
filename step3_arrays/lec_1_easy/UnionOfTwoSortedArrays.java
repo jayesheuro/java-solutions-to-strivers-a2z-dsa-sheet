@@ -1,12 +1,12 @@
 package step3_arrays.lec_1_easy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+// import java.util.Arrays;
+// import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+// import java.util.Map;
+// import java.util.Set;
+// import java.util.TreeSet;
 
 public class UnionOfTwoSortedArrays {
     static int[] union(int a1[], int a2[]) {
