@@ -7,7 +7,6 @@ public class MaximumConsecutiveOnes {
 
     static int findMaxConsecutiveOnes(int[] arr) {
 
-        // // -----------------------
         // // BRUTE - uses an additional array of size = number of 1 subarrays.
         // // TC - O(n) + O(C log C)
         // // SC - O(C) where C = number of subarrays of 1s

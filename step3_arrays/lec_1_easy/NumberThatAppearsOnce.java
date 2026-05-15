@@ -7,7 +7,7 @@ public class NumberThatAppearsOnce {
 
     static int findNumberThatAppearsOnce(int[] arr) {
         // // BRUTE: O(n) time, O(n/2 +1) space
-        // Map<Integer, Integer> m = new HashMap<>();
+        // Map<Integer, Integer> m = new HashMap<>(); // An array can also be used
         // for (int i : arr) {
         // if (m.containsKey(i)) {
         // m.remove(i);
