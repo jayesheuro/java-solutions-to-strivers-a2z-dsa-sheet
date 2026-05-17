@@ -1,8 +1,8 @@
 package step3_arrays.lec_2_medium;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Map;
 
 public class TwoSum {
     static boolean checkIfPairExists(int[] arr, int t) {
@@ -17,14 +17,28 @@ public class TwoSum {
         // }
         // }
 
-        // better - using hashmap
-        Map<Integer, Integer> arrMap = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (arrMap.containsKey(t - arr[i])) {
+        // // better - using hashmap
+        // Map<Integer, Integer> arrMap = new HashMap<>();
+        // for (int i = 0; i < arr.length; i++) {
+        // if (arrMap.containsKey(t - arr[i])) {
+        // found = true;
+        // break;
+        // } else {
+        // arrMap.put(arr[i], i);
+        // }
+        // }
+
+        // optimal - two pointers
+        Arrays.sort(arr);
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            if (arr[i] + arr[j] == t) {
                 found = true;
                 break;
+            } else if (arr[i] + arr[j] < t) {
+                i++;
             } else {
-                arrMap.put(arr[i], i);
+                j--;
             }
         }
         return found;
