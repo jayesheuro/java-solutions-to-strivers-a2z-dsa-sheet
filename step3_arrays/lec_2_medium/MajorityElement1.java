@@ -1,0 +1,32 @@
+package step3_arrays.lec_2_medium;
+
+// import java.util.HashMap;
+// import java.util.Map;
+// import java.util.Set;
+// import java.util.Map.Entry;
+
+public class MajorityElement1 {
+    static int findMajorityElement(int[] arr) {
+        // BRUTE: Time - O(N * N), Space - O(1)
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            int curFreq = 0;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] == arr[i]) {
+                    curFreq++;
+                }
+            }
+            if (curFreq > arr.length / 2) {
+                index = i;
+                break;
+            }
+        }
+        return arr[index];
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 7, 0, 0, 1, 7, 7, 2, 7, 7 };
+        int m = findMajorityElement(arr);
+        System.out.println(m);
+    }
+}
