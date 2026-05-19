@@ -1,5 +1,6 @@
 package step3_arrays.lec_2_medium;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -23,17 +24,21 @@ public class MajorityElement1 {
         // }
         // return arr[index];
 
-        // Better - HASHMAP to store frequencies, Time O(N), Space O(N)
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i : arr) {
-            int freq = map.getOrDefault(i, 0) + 1;
-            map.put(i, freq);
+        // // Better - HASHMAP to store frequencies, Time O(N), Space O(N)
+        // Map<Integer, Integer> map = new HashMap<>();
+        // for (int i : arr) {
+        // int freq = map.getOrDefault(i, 0) + 1;
+        // map.put(i, freq);
 
-            if (freq > arr.length / 2) {
-                return i;
-            }
-        }
-        return -1;
+        // if (freq > arr.length / 2) {
+        // return i;
+        // }
+        // }
+        // return -1;
+
+        // Another approach - Time - O(N log N) + O(N)
+        Arrays.sort(arr);
+        return arr[arr.length / 2];
     }
 
     public static void main(String[] args) {
