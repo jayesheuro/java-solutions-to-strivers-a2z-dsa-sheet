@@ -26,17 +26,14 @@ public class MajorityElement1 {
         // Better - HASHMAP to store frequencies, Time O(N), Space O(N)
         Map<Integer, Integer> map = new HashMap<>();
         for (int i : arr) {
-            int freq = map.getOrDefault(i, 0);
-            map.put(i, ++freq);
-        }
+            int freq = map.getOrDefault(i, 0) + 1;
+            map.put(i, freq);
 
-        Map.Entry<Integer, Integer> maxEntry = null;
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (maxEntry == null || entry.getValue() > maxEntry.getValue()) {
-                maxEntry = entry;
+            if (freq > arr.length / 2) {
+                return i;
             }
         }
-        return maxEntry.getKey();
+        return -1;
     }
 
     public static void main(String[] args) {
