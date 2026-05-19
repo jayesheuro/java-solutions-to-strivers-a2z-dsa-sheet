@@ -36,7 +36,7 @@ public class MajorityElement1 {
         // }
         // return -1;
 
-        // Another approach - Time - O(N log N) + O(N)
+        // Another approach - Time - O(N log N)
         Arrays.sort(arr);
         return arr[arr.length / 2];
     }
