@@ -36,9 +36,24 @@ public class MajorityElement1 {
         // }
         // return -1;
 
-        // Another approach - Time - O(N log N)
-        Arrays.sort(arr);
-        return arr[arr.length / 2];
+        // // Another approach - Time - O(N log N)
+        // Arrays.sort(arr);
+        // return arr[arr.length / 2];
+
+        // OPTIMAL - Moore's Voting Algorithm
+        int major = arr[0];
+        int count = 0;
+        for (int i : arr) {
+            if (count == 0) {
+                major = i;
+            }
+            if (i == major) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        return major;
     }
 
     public static void main(String[] args) {
