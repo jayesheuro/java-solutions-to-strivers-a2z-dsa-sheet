@@ -7,18 +7,32 @@ public class MaximumSubarraySum {
         if (arr.length == 1)
             return arr[0];
 
-        int sum = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            int curSubarraySum = 0;
-            for (int j = i; j < arr.length; j++) {
-                curSubarraySum += arr[j];
-                if (curSubarraySum > sum) {
-                    sum = curSubarraySum;
-                }
-            }
+        // Better from brute - O(n*n)
+        // int sum = arr[0];
+        // for (int i = 0; i < arr.length; i++) {
+        // int curSubarraySum = 0;
+        // for (int j = i; j < arr.length; j++) {
+        // curSubarraySum += arr[j];
+        // if (curSubarraySum > sum) {
+        // sum = curSubarraySum;
+        // }
+        // }
 
+        // }
+        // return sum;
+
+        int globalMax = Integer.MIN_VALUE;
+        int csum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            csum += arr[i];
+            if (csum > globalMax) {
+                globalMax = csum;
+            }
+            if (csum < 0) {
+                csum = 0;
+            }
         }
-        return sum;
+        return globalMax;
     }
 
     public static void main(String[] args) {
