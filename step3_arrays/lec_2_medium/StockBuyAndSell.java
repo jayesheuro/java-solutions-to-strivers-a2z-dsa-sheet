@@ -24,13 +24,11 @@ public class StockBuyAndSell {
                 min = arr[i];
                 tempBuy = i + 1;
             }
-            // min = Math.min(min, arr[i]);
             if (arr[i] - min > profit) {
                 profit = arr[i] - min;
                 sell = i + 1;
                 buy = tempBuy;
             }
-            // profit = Math.max(arr[i] - min, profit);
         }
         System.out.printf("We should buy on day %d and sell on day %d to make a profit of %d", buy, sell, profit);
 
