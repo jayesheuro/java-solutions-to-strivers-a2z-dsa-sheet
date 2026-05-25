@@ -35,7 +35,6 @@ public class StockBuyAndSell {
     }
 
     public static void main(String[] args) {
-        // int[] arr = { 7, 1, 5, 3, 6, 4 };
         int[] arr = { 50, 1, 20, 100, 10, 40 };
         stockBuyAndSell(arr);
     }
