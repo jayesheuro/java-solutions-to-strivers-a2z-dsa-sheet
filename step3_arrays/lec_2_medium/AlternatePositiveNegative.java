@@ -42,6 +42,7 @@ public class AlternatePositiveNegative {
         // ans[2 * negatives + 1] = arr[i];
         // }
         // }
+        //
         // return ans;
 
     }
