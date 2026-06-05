@@ -1,6 +1,9 @@
 package step3_arrays.lec_2_medium;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class LongestConsecutiveSequence {
     static int getLengthOfLCS(int[] arr, int n) {
@@ -23,6 +26,35 @@ public class LongestConsecutiveSequence {
         }
 
         return maxLength;
+    }
+
+    static int getLengthOfLCSOptimal(int[] arr, int n) {
+        if (n == 0)
+            return 0;
+
+        int longest = 1;
+
+        // Build a Set for O(1) lookup
+        java.util.Set<Integer> set = new java.util.HashSet<>();
+        for (int i : arr) {
+            set.add(i);
+        }
+
+        // Iterate over the set
+        for (int num : set) {
+            if (!set.contains(num - 1)) {
+                int currentLength = 1;
+
+                // Count the sequence
+                while (set.contains(num + 1)) {
+                    currentLength++;
+                    num++;
+                }
+                longest = Math.max(longest, currentLength);
+            }
+        }
+
+        return longest;
     }
 
     public static void main(String[] args) {
