@@ -34,13 +34,11 @@ public class LongestConsecutiveSequence {
 
         int longest = 1;
 
-        // Build a Set for O(1) lookup
         java.util.Set<Integer> set = new java.util.HashSet<>();
         for (int i : arr) {
             set.add(i);
         }
 
-        // Iterate over the set
         for (int num : set) {
             if (!set.contains(num - 1)) {
                 int currentLength = 1;
@@ -53,7 +51,6 @@ public class LongestConsecutiveSequence {
                 longest = Math.max(longest, currentLength);
             }
         }
-
         return longest;
     }
 
