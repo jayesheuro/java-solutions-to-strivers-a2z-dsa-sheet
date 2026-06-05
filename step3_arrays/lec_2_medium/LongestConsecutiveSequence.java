@@ -1,9 +1,8 @@
 package step3_arrays.lec_2_medium;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestConsecutiveSequence {
     static int getLengthOfLCS(int[] arr, int n) {
@@ -34,7 +33,7 @@ public class LongestConsecutiveSequence {
 
         int longest = 1;
 
-        java.util.Set<Integer> set = new java.util.HashSet<>();
+        Set<Integer> set = new HashSet<>();
         for (int i : arr) {
             set.add(i);
         }
