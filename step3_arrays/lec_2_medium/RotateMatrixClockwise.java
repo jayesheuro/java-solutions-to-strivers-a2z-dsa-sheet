@@ -20,9 +20,8 @@ public class RotateMatrixClockwise {
         int[][] ans = new int[n][n];
 
         for (int row = 0; row < n; row++) {
-            int rcount = 0;
             for (int col = 0; col < n; col++) {
-                ans[rcount++][n - row - 1] = arr[row][col];
+                ans[col][n - row - 1] = arr[row][col];
             }
         }
 
