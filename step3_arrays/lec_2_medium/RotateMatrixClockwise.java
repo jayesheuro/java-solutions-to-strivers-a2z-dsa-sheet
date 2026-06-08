@@ -33,12 +33,38 @@ public class RotateMatrixClockwise {
 
     }
 
+    static void rotateMatrixOptimal(int[][] arr, int n) {
+        if (n == 0)
+            return;
+
+        for (int row = 0; row < n; row++) {
+            for (int col = 0; col < row; col++) {
+                int temp = arr[col][row];
+                arr[col][row] = arr[row][col];
+                arr[row][col] = temp;
+            }
+        }
+
+        for (int row = 0; row < n; row++) {
+            int i = 0;
+            int j = n - 1;
+            while (i < j) {
+                int temp = arr[row][i];
+                arr[row][i] = arr[row][j];
+                arr[row][j] = temp;
+                i++;
+                j--;
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         int[][] arr = { { 0, 1, 2 }, { 3, 4, 5 }, { 1, 3, 1 } };
         System.out.println("Before rotating");
         printMatrix(arr);
 
-        rotateMatrix(arr, arr.length);
+        rotateMatrixOptimal(arr, arr.length);
         System.out.println("After rotating");
         printMatrix(arr);
     }
