@@ -17,7 +17,7 @@ public class SubArraySumEqualsK {
 
     public static void main(String[] args) {
         int n = 4, arr[] = { 3, 1, 2, 4 }, k = 6;
-        // int n = 3, arr[] = { 1, 2, 3 }, k = 3;
+        // int n = 3, arr[] = { 1, 2, 3 }, k = 3;;
         int ans = countSubarraysWithSumK(arr, n, k);
         System.out.println(ans);
     }
