@@ -22,7 +22,7 @@ public class SubArraySumEqualsK {
         int sum = 0;
         int count = 0;
         Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 1); // sum zero occurs 1 time
+        map.put(0, 1);
         for (int i = 0; i < n; i++) {
             sum += arr[i];
             if (map.containsKey(sum - k)) {
