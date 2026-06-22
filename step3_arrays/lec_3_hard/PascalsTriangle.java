@@ -5,48 +5,46 @@ import java.util.List;
 
 public class PascalsTriangle {
 
-    static void printRow(int n) {
-        int ans = 1;
-        System.out.print(1 + " ");
-        for (int j = 1; j < n; j++) {
-            ans = ans * (n - j);
-            ans = ans / j;
-            System.out.print(ans + " ");
+    private static List<Integer> generateRow(int rowNumber) {
+        List<Integer> row = new ArrayList<>();
+
+        long value = 1;
+        row.add(1);
+
+        for (int col = 1; col < rowNumber; col++) {
+            value = value * (rowNumber - col);
+            value = value / col;
+            row.add((int) value);
+        }
+
+        return row;
+    }
+
+    private static void printPascalTriangle(int totalRows) {
+        for (int row = 1; row <= totalRows; row++) {
+            System.out.println(generateRow(row));
         }
     }
 
-    static void printPascalTriangle(int n) {
-        for (int i = 1; i <= n; i++) {
-            printRow(i);
-            System.out.println();
-        }
-    }
+    private static List<List<Integer>> generatePascalTriangle(int totalRows) {
+        List<List<Integer>> triangle = new ArrayList<>();
 
-    static List<Integer> getRow(int n) {
-        int ans = 1;
-        List<Integer> ansRow = new ArrayList<>();
-        ansRow.add(1);
-        for (int j = 1; j < n; j++) {
-            ans = ans * (n - j);
-            ans = ans / j;
-            ansRow.add(ans);
+        for (int row = 1; row <= totalRows; row++) {
+            triangle.add(generateRow(row));
         }
-        return ansRow;
-    }
 
-    static List<List<Integer>> getPascalTriangleList(int n) {
-        List<List<Integer>> ans = new ArrayList<>();
-        for (int i = 1; i <= n; i++) {
-            List<Integer> ansRow = getRow(i);
-            ans.add(ansRow);
-        }
-        return ans;
+        return triangle;
     }
 
     public static void main(String[] args) {
-        int n = 5;
-        // printPascalTriangle(n);
-        List<List<Integer>> ans = getPascalTriangleList(n);
-        System.out.println(ans);
+        int totalRows = 5;
+
+        List<List<Integer>> triangle = generatePascalTriangle(totalRows);
+
+        System.out.println("Pascal's Triangle:");
+        System.out.println(triangle);
+
+        // Alternative printing
+        // printPascalTriangle(totalRows);
     }
 }
