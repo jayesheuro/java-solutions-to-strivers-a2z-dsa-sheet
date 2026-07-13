@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ThreeSum {
+    // O(n*n*n) TC
     static List<List<Integer>> threeSum(int[] arr) {
         Set<List<Integer>> uniqueTriplets = new HashSet<>();
         for (int i = 0; i < arr.length; i++) {
@@ -26,6 +27,7 @@ public class ThreeSum {
         return ans;
     }
 
+    // O(n*n) TC
     static List<List<Integer>> threeSumBetter(int[] arr) {
         Set<List<Integer>> uniqueTriplets = new HashSet<>();
         Set<Integer> visited = new HashSet<>();
