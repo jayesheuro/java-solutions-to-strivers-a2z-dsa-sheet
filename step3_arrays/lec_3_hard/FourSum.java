@@ -29,12 +29,35 @@ public class FourSum {
         return new ArrayList<>(ans);
     }
 
+    static List<List<Integer>> fourSumBetter(int[] arr, int t) {
+
+        Set<List<Integer>> ans = new HashSet<>();
+        Set<Integer> unique4thElements = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                unique4thElements.clear();
+                for (int k = j + 1; k < arr.length; k++) {
+                    if (unique4thElements.contains(t - (arr[i] + arr[j] + arr[k]))) {
+                        // found
+                        int fourth = t - (arr[i] + arr[j] + arr[k]);
+                        List<Integer> item = Arrays.asList(arr[i], arr[j], arr[k], fourth);
+                        item.sort(Comparator.naturalOrder());
+                        ans.add(item);
+                    }
+                    unique4thElements.add(arr[k]);
+                }
+            }
+        }
+
+        return new ArrayList<>(ans);
+    }
+
     public static void main(String[] args) {
         // int[] arr = { 1, 0, -1, 0, -2, 2 };
         int[] arr = { 4, 3, 3, 4, 4, 2, 1, 2, 1, 1 };
 
         int target = 9;
-        List<List<Integer>> quadruplets = fourSum(arr, target);
+        List<List<Integer>> quadruplets = fourSumBetter(arr, target);
         System.out.println(quadruplets);
     }
 }
