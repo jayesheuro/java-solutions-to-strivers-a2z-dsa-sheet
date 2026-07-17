@@ -16,7 +16,6 @@ public class FourSum {
                 for (int k = j + 1; k < arr.length; k++) {
                     for (int l = k + 1; l < arr.length; l++) {
                         if (arr[i] + arr[j] + arr[k] + arr[l] == t) {
-                            // found
                             List<Integer> item = Arrays.asList(arr[i], arr[j], arr[k], arr[l]);
                             item.sort(Comparator.naturalOrder());
                             ans.add(item);
@@ -38,7 +37,6 @@ public class FourSum {
                 unique4thElements.clear();
                 for (int k = j + 1; k < arr.length; k++) {
                     if (unique4thElements.contains(t - (arr[i] + arr[j] + arr[k]))) {
-                        // found
                         int fourth = t - (arr[i] + arr[j] + arr[k]);
                         List<Integer> item = Arrays.asList(arr[i], arr[j], arr[k], fourth);
                         item.sort(Comparator.naturalOrder());
