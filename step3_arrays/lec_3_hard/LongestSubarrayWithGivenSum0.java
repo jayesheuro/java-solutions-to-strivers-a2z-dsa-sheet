@@ -3,7 +3,7 @@ package step3_arrays.lec_3_hard;
 public class LongestSubarrayWithGivenSum0 {
 
     static int findMaxSubArrayLengthSum0(int[] arr, int k) {
-        // BRUTE
+        // BRUTE FORCE O(n*n)
         int maxLength = 0;
         int currentSum = 0;
         for (int i = 0; i < arr.length; i++) {
