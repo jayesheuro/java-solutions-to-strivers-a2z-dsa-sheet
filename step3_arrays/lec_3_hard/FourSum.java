@@ -50,6 +50,54 @@ public class FourSum {
         return new ArrayList<>(ans);
     }
 
+    static List<List<Integer>> fourSumOptimal(int[] arr, int t) {
+        List<List<Integer>> ans = new ArrayList<>();
+        int n = arr.length;
+
+        Arrays.sort(arr);
+
+        for (int i = 0; i < n; i++) {
+            // Skip duplicates for the 1st element
+            if (i > 0 && arr[i] == arr[i - 1])
+                continue;
+
+            for (int j = i + 1; j < n; j++) {
+                // Skip duplicates for the 2nd element
+                if (j > i + 1 && arr[j] == arr[j - 1])
+                    continue;
+
+                int k = j + 1;
+                int l = n - 1;
+
+                while (k < l) {
+                    long sum = (long) arr[i] + arr[j];
+                    sum += arr[k];
+                    sum += arr[l];
+
+                    if (sum < t) {
+                        k++;
+                    } else if (sum > t) {
+                        l--;
+                    } else {
+                        // found!
+                        ans.add(Arrays.asList(arr[i], arr[j], arr[k], arr[l]));
+                        k++;
+                        l--;
+
+                        // Skip duplicates for the 3rd element
+                        while (k < l && arr[k] == arr[k - 1])
+                            k++;
+
+                        // Skip duplicates for the 4th element
+                        while (k < l && arr[l] == arr[l + 1])
+                            l--;
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         // int[] arr = { 1, 0, -1, 0, -2, 2 };
         int[] arr = { 4, 3, 3, 4, 4, 2, 1, 2, 1, 1 };
