@@ -4,10 +4,7 @@ public class CountSubarraysWithGivenXORk {
     static int countSubarrayWithGivenXorK(int[] arr, int k) {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            int currentXor = arr[i];
-            if (currentXor == k) {
-                count++;
-            }
+            int currentXor = 0;
             for (int j = i + 1; j < arr.length; j++) {
                 currentXor = currentXor ^ arr[j];
                 if (currentXor == k) {
