@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MergeOverlappingIntervals {
+
+    // this does not work on unsorted intervals
+    // this gives incorrect answer for cases like (1,4) (2,5) (3,6)
     static List<List<Integer>> mergeOverlapping(int[][] arr) {
         List<List<Integer>> list = new ArrayList<>();
         if (arr.length == 1) {
