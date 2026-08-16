@@ -5,11 +5,6 @@ import java.util.Arrays;
 public class RepeatingAndMissingNumber {
     static int[] findRepeatingAndMissing(int[] arr) {
         int[] ans = new int[2];
-        // create a set > duplicate is removed
-        // calculate sum of 1 to n
-        // sum - setSum = missing number
-        // Repeating
-
         // repeating - sort the array and break when found
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 1; i++) {
