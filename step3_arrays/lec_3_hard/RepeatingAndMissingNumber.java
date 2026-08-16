@@ -1,19 +1,34 @@
 package step3_arrays.lec_3_hard;
 
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RepeatingAndMissingNumber {
     static int[] findRepeatingAndMissing(int[] arr) {
         int[] ans = new int[2];
-        // repeating - sort the array and break when found
-        Arrays.sort(arr);
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i + 1] == arr[i]) {
-                ans[0] = arr[i];
-            } else if (arr[i + 1] != arr[i] + 1) {
-                ans[1] = arr[i] + 1;
+        // // sorting is not allowed as mentioned in the problem
+        // Arrays.sort(arr);
+        // for (int i = 0; i < arr.length - 1; i++) {
+        // if (arr[i + 1] == arr[i]) {
+        // ans[0] = arr[i];
+        // } else if (arr[i + 1] != arr[i] + 1) {
+        // ans[1] = arr[i] + 1;
+        // }
+        // }
+        int n = arr.length;
+        int sum1toN = (n * (n + 1)) / 2;
+        Set<Integer> set = new HashSet<>();
+        int setSum = 0;
+        for (int num : arr) {
+            boolean added = set.add(num);
+            if (added) {
+                setSum += num;
+            } else {
+                // repeated number found
+                ans[0] = num;
             }
         }
+        ans[1] = sum1toN - setSum;
         return ans;
     }
 
