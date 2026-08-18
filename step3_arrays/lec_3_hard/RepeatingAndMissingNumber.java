@@ -6,15 +6,6 @@ import java.util.Set;
 public class RepeatingAndMissingNumber {
     static int[] findRepeatingAndMissing(int[] arr) {
         int[] ans = new int[2];
-        // // sorting is not allowed as mentioned in the problem
-        // Arrays.sort(arr);
-        // for (int i = 0; i < arr.length - 1; i++) {
-        // if (arr[i + 1] == arr[i]) {
-        // ans[0] = arr[i];
-        // } else if (arr[i + 1] != arr[i] + 1) {
-        // ans[1] = arr[i] + 1;
-        // }
-        // }
         int n = arr.length;
         int sum1toN = (n * (n + 1)) / 2;
         Set<Integer> set = new HashSet<>();
