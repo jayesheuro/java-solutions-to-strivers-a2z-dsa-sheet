@@ -15,7 +15,6 @@ public class RepeatingAndMissingNumber {
             if (added) {
                 setSum += num;
             } else {
-                // repeated number found
                 ans[0] = num;
             }
         }
