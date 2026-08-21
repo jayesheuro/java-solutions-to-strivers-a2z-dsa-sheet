@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class RepeatingAndMissingNumber {
+    // this is already a O(n) solution
     static int[] findRepeatingAndMissing(int[] arr) {
         int[] ans = new int[2];
         int n = arr.length;
