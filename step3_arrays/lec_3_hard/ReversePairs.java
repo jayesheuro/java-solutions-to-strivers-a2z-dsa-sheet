@@ -1,6 +1,7 @@
 package step3_arrays.lec_3_hard;
 
 public class ReversePairs {
+    // brute force O(n^2) solution
     static int countReversePairs(int[] arr) {
         int count = 0;
         int n = arr.length;
