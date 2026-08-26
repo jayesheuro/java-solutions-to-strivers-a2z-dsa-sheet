@@ -21,7 +21,6 @@ public class MaximumProductSubarray {
     }
 
     public static void main(String[] args) {
-        // int[] arr = { 1, 2, -3, 0, -4, -5 };
         int[] arr = { 1, 2, 3, -4, -5, 1, 0, -8 };
         System.out.println(mps(arr));
     }
