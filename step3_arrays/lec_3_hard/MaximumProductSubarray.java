@@ -20,6 +20,27 @@ public class MaximumProductSubarray {
         return maxProduct;
     }
 
+    static int mpsOptimal(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        int prefixProduct = 1;
+        int suffixProduct = 1;
+        for (int i = 0; i < arr.length; i++) {
+            if (prefixProduct == 0) {
+                prefixProduct = 1;
+            }
+
+            if (suffixProduct == 0) {
+                suffixProduct = 1;
+            }
+
+            prefixProduct *= arr[i];
+            suffixProduct *= arr[arr.length - i - 1];
+
+            max = Math.max(max, Math.max(prefixProduct, suffixProduct));
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, -4, -5, 1, 0, -8 };
         System.out.println(mps(arr));
