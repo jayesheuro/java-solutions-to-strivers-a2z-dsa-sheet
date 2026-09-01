@@ -10,7 +10,7 @@ public class LastOccurenceOfTarget {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 3, 4, 13, 13, 13, 20, 40, 3, 4, 13, 13, 13, 20, 40 };
+        int[] arr = { 3, 4, 13, 13, 13, 20, 40, 66, 98, 687};
         int n = arr.length;
         System.out.println(lastOccurenceOfTarget(arr, n, 13));
     }
