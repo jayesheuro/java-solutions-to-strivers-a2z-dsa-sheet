@@ -1,6 +1,7 @@
 package step4_binary_search.bs_on_1d_arrays;
 
 public class LastOccurenceOfTarget {
+    // brute force, O(N)
     static int lastOccurenceOfTarget(int[] arr, int n, int target) {
         for (int i = n - 1; i >= 0; i--) {
             if (arr[i] == target)
