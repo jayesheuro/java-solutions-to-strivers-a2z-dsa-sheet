@@ -10,9 +10,34 @@ public class LastOccurenceOfTarget {
         return -1;
     }
 
+    static int lastOccurenceOfTargetBetter(int[] arr, int n, int target) {
+        int high = n - 1;
+        int low = 0;
+        int pos = -1;
+        while (low <= high) {
+            int mid = low + high - low / 2;
+            if (arr[mid] == target) {
+                pos = mid;
+                break;
+            } else if (arr[mid] < target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        if (pos != -1) {
+            for (int i = pos; i < n - 1; i++) {
+                if (arr[i] != target) {
+                    return pos;
+                }
+            }
+        }
+        return pos;
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 3, 4, 13, 13, 13, 20, 40, 66};
+        int[] arr = { 3, 4, 13, 13, 13, 20, 40, 66 };
         int n = arr.length;
-        System.out.println(lastOccurenceOfTarget(arr, n, 13));
+        System.out.println(lastOccurenceOfTargetBetter(arr, n, 13));
     }
 }
