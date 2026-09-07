@@ -26,13 +26,6 @@ public class LastOccurenceOfTarget {
                 high = mid - 1;
             }
         }
-        // if (pos != -1) {
-        // for (int i = pos; i < n - 1; i++) {
-        // if (arr[i] != target) {
-        // return pos;
-        // }
-        // }
-        // }
         return pos;
     }
 
