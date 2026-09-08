@@ -18,7 +18,6 @@ public class LastOccurenceOfTarget {
             int mid = low + high - low / 2;
             if (arr[mid] == target) {
                 pos = mid;
-                // break;
                 low = mid + 1;
             } else if (arr[mid] < target) {
                 low = mid + 1;
