@@ -1,6 +1,7 @@
 package step4_binary_search.bs_on_1d_arrays;
 
 public class CountOccurencesInSortedArray {
+    //brute
     static int countOccurences(int[]arr, int target){
         int ans= 0;
         for(int i: arr){
