@@ -37,11 +37,42 @@ public class FindHowManyTimesArrayIsRotated {
         return 0;
     }
 
+    static int findHowManyTimesArrayIsRotatedOptimal(int[] arr) {
+        int n = arr.length;
+        int low = 0;
+        int high = n - 1;
+        int min = Integer.MAX_VALUE;
+        int minIndex = -1;
+        while (low <= high) {
+            // find minimum index and your answer is Right Rotated ans times
+            int mid = low + ((high - low) / 2);
+            if (arr[low] <= arr[mid]) {
+                // left part is sorted
+                // take minimum
+                if (arr[low] < min) {
+                    min = arr[low];
+                    minIndex = low;
+                }
+                low = mid + 1;
+            } else {
+                // right part is sorted
+                // take minimum
+                if (arr[mid] < min) {
+                    min = arr[mid];
+                    minIndex = mid;
+                }
+                high = mid - 1;
+            }
+        }
+        return minIndex == 0 ? 0 : n - minIndex;
+    }
+
     public static void main(String[] args) {
-        // int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8 };
-        int[] rotatedArray = { 2, 3, 4, 1 };
+        int[] rotatedArray = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        // int[] rotatedArray = { 2, 3, 4, 1 };
         // System.out.println(findHowManyTimesArrayIsRotated(rotatedArray));
-        System.out.println("Left rotated " +
-                findHowManyTimesArrayIsRotatedBetter(rotatedArray) + " times");
+        // System.out.println("Left rotated " +
+        // findHowManyTimesArrayIsRotatedBetter(rotatedArray) + " times");
+        System.out.println("Left rotated " + findHowManyTimesArrayIsRotatedOptimal(rotatedArray) + " times");
     }
 }
