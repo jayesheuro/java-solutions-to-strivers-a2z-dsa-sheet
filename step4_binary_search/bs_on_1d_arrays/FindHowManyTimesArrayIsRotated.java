@@ -6,6 +6,7 @@ public class FindHowManyTimesArrayIsRotated {
         int n = arr.length;
         int min = arr[0];
         int minIndex = 0;
+        // calculates right rotated times
         for (int i = 0; i < n; i++) {
             if (arr[i] < min) {
                 min = arr[i];
@@ -15,9 +16,32 @@ public class FindHowManyTimesArrayIsRotated {
         return minIndex;
     }
 
+    static int findHowManyTimesArrayIsRotatedBetter(int[] arr) {
+        int n = arr.length;
+        int left = 0;
+        int right = n - 1;
+        while (left < right) {
+            if (arr[left] > arr[left + 1]) {
+                // right rotated by left+1 times
+                // left rotated by n - left +1 times
+                return n - left - 1;
+            }
+            if (arr[right - 1] > arr[right]) {
+                // right rotated right times
+                // left rotated n - right times
+                return n - right;
+            }
+            left++;
+            right--;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
-        // int[]arr = {1,2,3,4,5,6,7,8};
-        int[] rotatedArray = { 4, 5, 6, 7, 0, 1, 2, 3 };
-        System.out.println(findHowManyTimesArrayIsRotated(rotatedArray));
+        // int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int[] rotatedArray = { 2, 3, 4, 1 };
+        // System.out.println(findHowManyTimesArrayIsRotated(rotatedArray));
+        System.out.println("Left rotated " +
+                findHowManyTimesArrayIsRotatedBetter(rotatedArray) + " times");
     }
 }
