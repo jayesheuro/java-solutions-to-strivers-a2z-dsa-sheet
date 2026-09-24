@@ -6,6 +6,7 @@ public class FindSquareRootOfANumber {
         return (int) Math.sqrt(n);
     }
 
+    // uses binary search
     static int findSquareRootOptimal(int n){
         int low = 0;
         int high = n;
