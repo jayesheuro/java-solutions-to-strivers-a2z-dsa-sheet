@@ -31,8 +31,33 @@ public class SmallestDivisior {
         return sum;
     }
     
+    // O(N + N * log(max))
+    static int smallestDivisorOptimal(int[]arr, int limit) {
+        // find max
+        int max = arr[0];
+        for(int i: arr){
+            max = Math.max(i, max);
+        }
+
+        // search space is 1 to max
+        int low = 1;
+        int high = max;
+        int ans = Integer.MAX_VALUE;
+        while(low <= high){
+            int mid = low + ((high - low)/2);
+            int dsum =  calculateSumOfDivisors(arr, mid, limit);
+
+            if(dsum > limit){
+                low = mid + 1;
+            } else {
+                ans = mid; //probable answer
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         int[]arr ={1,2,3,4,5};
-        System.out.println(smallestDivisor(arr, 8));
+        System.out.println(smallestDivisorOptimal(arr, 8));
     }    
 }
