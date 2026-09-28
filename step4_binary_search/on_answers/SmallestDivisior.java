@@ -50,7 +50,7 @@ public class SmallestDivisior {
             if(dsum > limit){
                 low = mid + 1;
             } else {
-                ans = mid; //probable answer
+                ans = mid; //probable answer so move left
                 high = mid - 1;
             }
         }
