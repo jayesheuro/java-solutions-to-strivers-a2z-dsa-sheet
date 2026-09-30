@@ -1,6 +1,7 @@
 package step4_binary_search.on_answers;
 
 public class KokoEatingBananas {
+    // adding structure
     static int calculateEatingRate(int[]arr, int n, int h){
         
         return 0;
