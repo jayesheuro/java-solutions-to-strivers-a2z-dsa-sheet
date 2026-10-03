@@ -40,9 +40,35 @@ public class MinimumDaysToMakeMBouquets {
         return -1;
     }
 
+    static int findMinDaysToMakeOptimal(int[] arr, int n, int k, int m) {
+        int ans = -1;
+        if (n < k * m)
+            return ans;
+
+        int max = arr[0];
+        int min = arr[0];
+        for (int i = 0; i < n; i++) {
+            max = Math.max(arr[i], max);
+            min = Math.min(arr[i], min);
+        }
+
+        int low = min;
+        int high = max;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            boolean possible = bouquetsPossible(arr, mid, k, m);
+            if (possible) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return low;
+    }
+
     public static void main(String[] args) {
         int[] nums = { 7, 7, 7, 7, 13, 11, 12, 7 };
         int m = 3, k = 2, n = 8;
-        System.out.println(findMinDaysToMake(nums, n, k, m));
+        System.out.println(findMinDaysToMakeOptimal(nums, n, k, m));
     }
 }
