@@ -25,7 +25,7 @@ public class CapacityToShipPackagesWithinDDays {
             maxWeight = Math.max(i, maxWeight);
             totalWeight+=i;
         }
-
+// brute force
 //        for(int i = maxWeight; i < totalWeight; i++){
 //            boolean possible = isDeliveryPossible(arr, D, i);
 //            if(possible) return i;
