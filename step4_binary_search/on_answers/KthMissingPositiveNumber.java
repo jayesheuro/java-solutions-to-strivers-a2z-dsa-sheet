@@ -27,14 +27,22 @@ public class KthMissingPositiveNumber {
 
     static int findKthMissing(int[] arr, int n, int k) {
         int missingIndex = 0;
-        for (int i = 1; i <= arr[n - 1]; i++) {
-            boolean exists = searchIfExists(arr, i);
-            if (!exists) {
-                missingIndex++;
-                if (missingIndex == k) {
-                    return i;
-                }
-            }
+//        using linear search
+//        for (int i = 1; i <= arr[n - 1]; i++) {
+//            boolean exists = searchIfExists(arr, i);
+//            if (!exists) {
+//                missingIndex++;
+//                if (missingIndex == k) {
+//                    return i;
+//                }
+//            }
+//        }
+        int low = 1;
+        int high = arr[n-1];
+        while(low <= high) {
+            int mid = low + (high - low)/2;
+            boolean exists = searchIfExists(arr, mid);
+
         }
         return -1;
     }
