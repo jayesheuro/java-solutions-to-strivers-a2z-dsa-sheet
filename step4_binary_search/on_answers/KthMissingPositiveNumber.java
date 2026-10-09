@@ -27,7 +27,7 @@ public class KthMissingPositiveNumber {
 
     static int findKthMissing(int[] arr, int n, int k) {
         int missingIndex = 0;
-//        using linear search
+//        using linear search in O(N)
 //        for (int i = 1; i <= arr[n - 1]; i++) {
 //            boolean exists = searchIfExists(arr, i);
 //            if (!exists) {
