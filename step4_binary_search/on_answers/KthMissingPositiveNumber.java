@@ -37,6 +37,8 @@ public class KthMissingPositiveNumber {
 //                }
 //            }
 //        }
+
+//        using binary search O(N) for this function
         int low = 1;
         int high = arr[n-1];
         while(low <= high) {
