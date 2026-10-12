@@ -4,27 +4,27 @@ public class AlternatePositiveNegative {
     static int[] alternatePositiveNegative(int[] arr, int n) {
         // BRUTE - TC = O(N) + O(N), SC = O(N) additional
         // int[] temp = new int[n];
-
+        //
         // This approach is optimal if we do not know the number of positives and
         // negatives whether they are equal or not. In this case we will also need to
         // move the remaining numbers to the end. Extra space O(N/2) + O(N/2) will be
         // needed.
-        int[] P = new int[n / 2];
-        int[] N = new int[n / 2];
-        int pn = 0, cn = 0;
-        for (int i : arr) {
-            if (i < 0) {
-                N[cn++] = i;
-            } else {
-                P[pn++] = i;
-            }
-        }
-
-        for (int i = 0; i < n / 2; i++) {
-            arr[2 * i] = P[i];
-            arr[2 * i + 1] = N[i];
-        }
-        return arr;
+        // int[] P = new int[n / 2];
+        // int[] N = new int[n / 2];
+        // int pn = 0, cn = 0;
+        // for (int i : arr) {
+        //     if (i < 0) {
+        //         N[cn++] = i;
+        //     } else {
+        //         P[pn++] = i;
+        //     }
+        // }
+        //
+        // for (int i = 0; i < n / 2; i++) {
+        //     arr[2 * i] = P[i];
+        //     arr[2 * i + 1] = N[i];
+        // }
+        // return arr;
 
         // OPTIMAL - using less space
         // since its given the array has equal positives and negatives, and the order
@@ -45,13 +45,30 @@ public class AlternatePositiveNegative {
         //
         // return ans;
 
+        // Optimal - corrected: respects the initial order of positive / negative number
+        int[] ans = new int[n];
+        boolean firstNumberIsPositive = arr[0] > 0;
+        int po = firstNumberIsPositive ? 0 : 1;
+        int ne = firstNumberIsPositive ? 1 : 0;
+        for (int i : arr) {
+            if (i < 0) {
+                ans[ne] = i;
+                ne += 2;
+            } else {
+                ans[po] = i;
+                po += 2;
+            }
+        }
+
+        return ans;
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, -3, -1, -2, 3 };
+        int[] arr = {-1, 2, 3, -1, -2, 3};
         int[] output = alternatePositiveNegative(arr, arr.length);
         for (int i : output) {
             System.out.println(i + " ");
         }
     }
 }
+
