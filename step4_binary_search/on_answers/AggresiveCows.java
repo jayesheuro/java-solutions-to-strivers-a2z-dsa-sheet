@@ -25,14 +25,24 @@ public class AggresiveCows {
         int start = 1; // minimum distance between cows is 1
         int end = nums[nums.length - 1] - nums[0];
 
-        for (int i = start; i <= end; i++) {
-            if (cowsCanBePlaced(nums, i, k)) {
-                continue;
+        // for (int i = start; i <= end; i++) {
+        //     if (cowsCanBePlaced(nums, i, k)) {
+        //         continue;
+        //     } else {
+        //         return i - 1;
+        //     }
+        // }
+        int ans = -1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (cowsCanBePlaced(nums, mid, k)) {
+                ans = mid;
+                start = mid + 1;
             } else {
-                return i - 1;
+                end = mid - 1;
             }
         }
-        return -1;
+        return ans;
     }
 
     public static void main(String[] args) {
