@@ -1,0 +1,43 @@
+package step4_binary_search.on_answers;
+
+import java.util.Arrays;
+
+public class AggresiveCows {
+    static boolean cowsCanBePlaced(int[] nums, int minDistance, int cows) {
+        // place the first cow
+        int latestCowPosition = nums[0];
+        int cowsPlaced = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] - latestCowPosition >= minDistance) {
+                cowsPlaced++;
+                latestCowPosition = nums[i];
+            }
+            if (cowsPlaced >= cows) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static int findMinDistance(int[] nums, int k) {
+        Arrays.sort(nums);
+        int start = 1; // minimum distance between cows is 1
+        int end = nums[nums.length - 1] - nums[0];
+
+        for (int i = start; i <= end; i++) {
+            if (cowsCanBePlaced(nums, i, k)) {
+                continue;
+            } else {
+                return i - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 3, 4, 7, 10, 9};
+        int k = 4;
+        System.out.println(findMinDistance(nums, k));
+    }
+}
