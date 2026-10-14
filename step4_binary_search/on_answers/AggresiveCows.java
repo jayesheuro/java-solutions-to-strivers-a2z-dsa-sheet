@@ -3,6 +3,7 @@ package step4_binary_search.on_answers;
 import java.util.Arrays;
 
 public class AggresiveCows {
+    // helper that counts number of cows that can be placed keeping a minimum distance between them
     static boolean cowsCanBePlaced(int[] nums, int minDistance, int cows) {
         // place the first cow
         int latestCowPosition = nums[0];
