@@ -3,7 +3,7 @@ package step4_binary_search.on_answers;
 import java.util.Arrays;
 
 public class AggresiveCows {
-    // helper that counts number of cows that can be placed keeping a minimum distance between them
+    // helper that counts number of cows that can be placed keeping a minimum distance between them.
     static boolean cowsCanBePlaced(int[] nums, int minDistance, int cows) {
         // place the first cow
         int latestCowPosition = nums[0];
@@ -21,6 +21,7 @@ public class AggresiveCows {
         return false;
     }
 
+    // function to find the minimum distance as per problem
     static int findMinDistance(int[] nums, int k) {
         Arrays.sort(nums);
         int start = 1; // minimum distance between cows is 1
