@@ -1,6 +1,8 @@
 package step4_binary_search.on_answers;
 
 public class FindPeakElement {
+
+    // brute force solution
     static int findPeakElement(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
