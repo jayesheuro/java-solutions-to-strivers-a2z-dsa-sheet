@@ -16,7 +16,7 @@ public class FindPeakElement {
         return -1;
     }
 
-    // optimal version
+    // optimal solution
     static int findPeakElementOptimal(int[] arr) {
         int n = arr.length;
         int low = 0;
