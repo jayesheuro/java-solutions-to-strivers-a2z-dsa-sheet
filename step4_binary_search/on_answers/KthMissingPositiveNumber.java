@@ -11,15 +11,15 @@ public class KthMissingPositiveNumber {
         int low = 0;
         int high = arr.length - 1;
         int ans = -1;
-        while(low <= high){
-            int mid = low + (high - low)/2;
-            if(arr[mid] == e){
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == e) {
                 ans = mid;
             }
-            if(arr[mid] > e) {
+            if (arr[mid] > e) {
                 high = mid - 1;
             } else {
-                low =  mid + 1;
+                low = mid + 1;
             }
         }
         return ans != -1;
@@ -27,31 +27,42 @@ public class KthMissingPositiveNumber {
 
     static int findKthMissing(int[] arr, int n, int k) {
         int missingIndex = 0;
-//        using linear search in O(N)
-//        for (int i = 1; i <= arr[n - 1]; i++) {
-//            boolean exists = searchIfExists(arr, i);
-//            if (!exists) {
-//                missingIndex++;
-//                if (missingIndex == k) {
-//                    return i;
-//                }
-//            }
-//        }
-
-//        using binary search O(N) for this function
-        int low = 1;
-        int high = arr[n-1];
-        while(low <= high) {
-            int mid = low + (high - low)/2;
-            boolean exists = searchIfExists(arr, mid);
-
+        // using linear search in O(N)
+        for (int i = 1; i <= arr[n - 1]; i++) {
+            boolean exists = searchIfExists(arr, i);
+            if (!exists) {
+                missingIndex++;
+                if (missingIndex == k) {
+                    return i;
+                }
+            }
         }
+
         return -1;
     }
 
+    static int findKthMissingOptimal(int[] arr, int n, int k) {
+        int low = 0;
+        int high = n - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            int missing = arr[mid] - (mid + 1);
+
+            if (missing < k) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        return low + k;
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 3, 5, 7, 10 };
+        int[] arr = {3, 5, 7, 10};
         int k = 6;
-        System.out.println(findKthMissing(arr, arr.length, k));
+        System.out.println(findKthMissingOptimal(arr, arr.length, k));
     }
 }
