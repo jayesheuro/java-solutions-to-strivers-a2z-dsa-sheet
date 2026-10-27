@@ -61,8 +61,8 @@ public class KthMissingPositiveNumber {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 5, 7, 10};
-        int k = 6;
+        int[] arr = {1, 4, 6, 8, 9};
+        int k = 3;
         System.out.println(findKthMissingOptimal(arr, arr.length, k));
     }
 }
